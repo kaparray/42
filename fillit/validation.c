@@ -51,13 +51,25 @@ int		checker(int *ttr)
 	return (isTetramino());
 }
 
-int		typeOfTetramino()
+
+int		isTetramino()
+{
+	int i;
+
+	i = 0;
+	while (g_ttr.len > i)
+	{
+		if (typeOfTetramino(i) == 0x0)
+			return (0);
+		i++;
+	}
+}
+
+int		typeOfTetramino(int i)
 {
 	int t1;
 	int t2;
 	int t3;
-	int i;
-
 
 	t3 = g_ttr.arr[3] - g_ttr.arr[2];
 	t2 = g_ttr.arr[2] - g_ttr.arr[1];
@@ -84,7 +96,24 @@ int		typeOfTetramino()
 		g_lstttr.arr[i] = T10;
 	else if (t1 == 3 && t2 == 1 && t3 == 3)
 		g_lstttr.arr[i] = T11;
+	else if (t1 == 4 && t2 == 4 && t3 == 1)
+		g_lstttr.arr[i] = T12;
+	else if (t1 == 2 && t2 == 1 && t3 == 1)
+		g_lstttr.arr[i] = T13;
+	else if (t1 == 4 && t2 == 3 && t3 == 1)
+		g_lstttr.arr[i] = T14;
+	else if (t1 == 4 && t2 == 4 && t3 == 1)
+		g_lstttr.arr[i] = T15;
+	else if (t1 == 1 && t2 == 1 && t3 == 2)
+		g_lstttr.arr[i] = T16
+	else if (t1 == 1 && t2 == 1 && t3 == 4)
+		g_lstttr.arr[i] = T17;
+	else if (t1 == 1 && t2 == 4 && t3 == 4)
+		g_lstttr.arr[i] = T18;
+	else if (t1 == 1 && t2 == 3 && t3 == 4)
+		g_lstttr.arr[i] = T19;
 	else
-		return (0);
+		return (0x0);
+	return (1);
 }
 
