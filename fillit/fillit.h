@@ -6,7 +6,7 @@
 /*   By: hpowlows <hpowlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/15 16:12:17 by hpowlows          #+#    #+#             */
-/*   Updated: 2018/12/15 21:55:40 by hpowlows         ###   ########.fr       */
+/*   Updated: 2018/12/15 22:21:11 by hpowlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,33 +26,41 @@
  *
 */
 
-# define T1 "#.."
-# define T2
-# define T3
-# define T4
-# define T5
-# define T6
-# define T7
-# define T8
-# define T9
-# define T10
-# define T11
-# define T12
-# define T13
-# define T14
-# define T15
-# define T16
-# define T17
-# define T18
-# define T19
+# define T1 1	// 3 + 1 up
+# define T2 2	// 3 + 1 down
+# define T3 3	// 3 + 1 left
+# define T4 4	// 3 + 1 right
+# define T5 5	// 4 little square in row
+# define T6 6	// 4 little square in column
+# define T7 7	// square
+# define T8 8	// s normal
+# define T9 9	// z normal
+# define T10 10	// s on hip
+# define T11 11 // z on hip
+# define T12 12
+# define T13 13
+# define T14 14
+# define T15 15
+# define T16 16
+# define T17 17
+# define T18 18
+# define T19 19
 
 
 typedef struct	 s_ttr
 {
 	int		**arr;
+	ssize_t	len;
 }				t_ttr;
 
-t_ttr g_ttr;
+typedef struct	 s_lstttr
+{
+	int		*arr;
+	ssize_t	len;
+}				t_lstttr;
 
+
+t_ttr			g_ttr;
+t_lstttr		g_lstttr;
 
 #endif

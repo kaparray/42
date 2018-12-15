@@ -6,7 +6,7 @@
 /*   By: hpowlows <hpowlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/15 16:11:52 by hpowlows          #+#    #+#             */
-/*   Updated: 2018/12/15 21:55:43 by hpowlows         ###   ########.fr       */
+/*   Updated: 2018/12/15 22:21:11 by hpowlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,12 +56,34 @@ int		typeOfTetramino()
 	int t1;
 	int t2;
 	int t3;
+	int i;
+
 
 	t3 = g_ttr.arr[3] - g_ttr.arr[2];
 	t2 = g_ttr.arr[2] - g_ttr.arr[1];
 	t1 = g_ttr.arr[1] - g_ttr.arr[0];
-	if (t1 == 3 && t2 == 1 && t3 == 1)  // is ttr
-		;
+	if (t1 == 3 && t2 == 1 && t3 == 1)
+		g_lstttr.arr[i] = T1;
+	else if (t1 == 1 && t2 == 1 && t3 == 3)
+		g_lstttr.arr[i] = T2;
+	else if (t1 == 2 && t2 == 1 && t3 == 4)
+		g_lstttr.arr[i] = T3;
+	else if (t1 == 4 && t2 == 1 && t3 == 3)
+		g_lstttr.arr[i] = T4;
+	else if (t1 == 4 && t2 == 4 && t3 == 4)
+		g_lstttr.arr[i] = T5;
+	else if (t1 == 1 && t2 == 1 && t3 == 1)
+		g_lstttr.arr[i] = T6;
+	else if (t1 == 1 && t2 == 3 && t3 == 1)
+		g_lstttr.arr[i] = T7;
+	else if (t1 == 1 && t2 == 2 && t3 == 1)
+		g_lstttr.arr[i] = T8;
+	else if (t1 == 1 && t2 == 4 && t3 == 1)
+		g_lstttr.arr[i] = T9;
+	else if (t1 == 3 && t2 == 1 && t3 == 3)
+		g_lstttr.arr[i] = T10;
+	else if (t1 == 3 && t2 == 1 && t3 == 3)
+		g_lstttr.arr[i] = T11;
 	else
 		return (0);
 }
