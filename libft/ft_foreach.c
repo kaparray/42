@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_foreach.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hpowlows <hpowlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/28 20:12:39 by hpowlows          #+#    #+#             */
-/*   Updated: 2018/12/10 18:47:52 by hpowlows         ###   ########.fr       */
+/*   Created: 2018/11/28 20:11:00 by hpowlows          #+#    #+#             */
+/*   Updated: 2018/11/29 20:04:44 by hpowlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isprint(int c)
+void	ft_foreach(int *tab, unsigned int length, void (*f)(int))
 {
-	if (c >= 32 && c <= 126)
-		return (1);
-	return (0);
+	if (tab == NULL || f == NULL)
+		return ;
+	while (length--)
+		f(*tab++);
 }

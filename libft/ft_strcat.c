@@ -1,39 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hpowlows <hpowlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 20:12:39 by hpowlows          #+#    #+#             */
-/*   Updated: 2018/12/10 18:47:12 by hpowlows         ###   ########.fr       */
+/*   Updated: 2018/12/10 18:50:18 by hpowlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(const char *str)
+char	*ft_strcat(char *s1, const char *s2)
 {
-	int			index;
-	int			sign;
-	long long	result;
-	long long	tempo;
+	char *tempo;
 
-	sign = 1;
-	index = 0;
-	result = 0;
-	while (str[index] == ' ' || (str[index] >= 9 && str[index] <= 13))
-		index++;
-	if (str[index] == '-')
-		sign = -1;
-	if (str[index] == '-' || str[index] == '+')
-		index++;
-	while (str[index] >= '0' && str[index] <= '9')
+	tempo = s1;
+	while (*s1)
+		s1++;
+	while (*s2)
 	{
-		tempo = result;
-		result = result * 10 + (str[index++] - 48);
-		if (tempo > result)
-			return (sign < 0) ? 0 : -1;
+		*s1 = *s2;
+		s1++;
+		s2++;
 	}
-	return (sign * (int)result);
+	*s1 = '\0';
+	return (tempo);
 }
