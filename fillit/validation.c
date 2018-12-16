@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   validation.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaparray <kaparray@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hpowlows <hpowlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/15 16:11:52 by hpowlows          #+#    #+#             */
-/*   Updated: 2018/12/16 12:11:14 by kaparray         ###   ########.fr       */
+/*   Updated: 2018/12/16 17:46:15 by hpowlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
 
-int		typeOfTetramino(int i)
+int		type_of_tetramino(int i)
 {
 	int t1;
 	int t2;
@@ -26,7 +26,7 @@ int		typeOfTetramino(int i)
 		g_lstttr.arr[i] = T1;
 	else if (t1 == 1 && t2 == 1 && t3 == 3)
 		g_lstttr.arr[i] = T2;
-	else if (t1 == 2 && t2 == 1 && t3 == 4)
+	else if (t1 == 3 && t2 == 1 && t3 == 4)
 		g_lstttr.arr[i] = T3;
 	else if (t1 == 4 && t2 == 1 && t3 == 3)
 		g_lstttr.arr[i] = T4;
@@ -65,18 +65,18 @@ int		typeOfTetramino(int i)
 	return (1);
 }
 
-int		isTetramino()
+int		is_tetramino()
 {
 	int i;
 
 	i = 0;
-	while (g_ttr.len > i)
+	while (g_ttr.len > i) // TODO malloc memmory for len and update this value
 	{
-		if (typeOfTetramino(i) == 0x0)
+		if (type_of_tetramino(i) == 0x0)
 		{
-			printf("isTetramino\n");
 			return (0);
 		}
+
 		i++;
 	}
 	return (1);
@@ -87,19 +87,18 @@ int		checker(char *ttr)
 	int		i;
 	int		cnt;
 
-	printf("checker\n");
 	i = 0;
 	cnt = -1;
 	while (ttr[i])
 	{
 		if (ttr[i] == TR)
-			g_ttr.arr[cnt++] = i;
+			g_ttr.arr[++cnt] = i;
 		i++;
 	}
-	return (isTetramino());
+	return (is_tetramino());
 }
 
-int		validation(char *ttr)
+int		valid(char *ttr)
 {
 	int		i;
 	int		len;
@@ -123,4 +122,3 @@ int		validation(char *ttr)
 		return (checker(ttr));
 	return (0);
 }
-

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fillit.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaparray <kaparray@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hpowlows <hpowlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/15 16:12:17 by hpowlows          #+#    #+#             */
-/*   Updated: 2018/12/16 10:52:48 by kaparray         ###   ########.fr       */
+/*   Updated: 2018/12/16 16:12:43 by hpowlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,13 @@
 # include <sys/stat.h>
 # include <stdio.h>
 
+
+
+
+
+
+
+
 # define TR '#'
 
 /**
@@ -27,25 +34,25 @@
  *
 */
 
-# define T1 1	// 3 + 1 up
-# define T2 2	// 3 + 1 down
-# define T3 3	// 3 + 1 left
-# define T4 4	// 3 + 1 right
-# define T5 5	// 4 little square in row
-# define T6 6	// 4 little square in column
-# define T7 7	// square
-# define T8 8	// s normal
-# define T9 9	// z normal
-# define T10 10	// s on hip
-# define T11 11	// z on hip
-# define T12 12	// j on long down
-# define T13 13	// l on long down
-# define T14 14	// j on sort down
-# define T15 15	// l on short down
-# define T16 16	// l on long up
-# define T17 17	// j on long up
-# define T18 18	// l on short up
-# define T19 19 // j on short up
+# define T1 1		// 3 + 1 up
+# define T2 2		// 3 + 1 down
+# define T3 3		// 3 + 1 left
+# define T4 4		// 3 + 1 right
+# define T5 5		// 4 little square in row
+# define T6 6		// 4 little square in column
+# define T7 7		// square
+# define T8 8		// s normal
+# define T9 9		// z normal
+# define T10 10		// s on hip
+# define T11 11		// z on hip
+# define T12 12
+# define T13 13
+# define T14 14
+# define T15 15
+# define T16 16
+# define T17 17
+# define T18 18
+# define T19 19
 
 
 typedef struct	 s_ttr
@@ -60,12 +67,12 @@ typedef struct	 s_lstttr
 	ssize_t	len;
 }				t_lstttr;
 
+
 t_ttr			g_ttr;
 t_lstttr		g_lstttr;
 
 
+int		valid(char *ttr);
 
-
-int		validation(char *ttr);
 
 #endif
