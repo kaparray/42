@@ -3,67 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   validation.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hpowlows <hpowlows@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kaparray <kaparray@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/15 16:11:52 by hpowlows          #+#    #+#             */
-/*   Updated: 2018/12/15 22:21:11 by hpowlows         ###   ########.fr       */
+/*   Updated: 2018/12/16 12:11:14 by kaparray         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-
-int		validation(char *ttr)
-{
-	int		i;
-	int		len;
-	int		cnt;
-
-	i = -1;
-	len = 0;
-	cnt = 0;
-	while (ttr[++i])
-	{
-		if (ttr[i] == TR)
-			cnt++;
-		else if (ttr[i] == '.')
-			len++;
-		else
-			return (0);
-	}
-	if (cnt == 4 && len == 12)
-		return (checker(ttr));
-	return (0);
-}
-
-int		checker(int *ttr)
-{
-	int		i;
-	int		cnt;
-
-	i = 0;
-	cnt = -1;
-	while (ttr[i])
-	{
-		if (ttr[i] == TR)
-			g_ttr.arr[cnt++] = i;
-	}
-	return (isTetramino());
-}
-
-
-int		isTetramino()
-{
-	int i;
-
-	i = 0;
-	while (g_ttr.len > i)
-	{
-		if (typeOfTetramino(i) == 0x0)
-			return (0);
-		i++;
-	}
-}
 
 int		typeOfTetramino(int i)
 {
@@ -105,7 +53,7 @@ int		typeOfTetramino(int i)
 	else if (t1 == 4 && t2 == 4 && t3 == 1)
 		g_lstttr.arr[i] = T15;
 	else if (t1 == 1 && t2 == 1 && t3 == 2)
-		g_lstttr.arr[i] = T16
+		g_lstttr.arr[i] = T16;
 	else if (t1 == 1 && t2 == 1 && t3 == 4)
 		g_lstttr.arr[i] = T17;
 	else if (t1 == 1 && t2 == 4 && t3 == 4)
@@ -115,5 +63,64 @@ int		typeOfTetramino(int i)
 	else
 		return (0x0);
 	return (1);
+}
+
+int		isTetramino()
+{
+	int i;
+
+	i = 0;
+	while (g_ttr.len > i)
+	{
+		if (typeOfTetramino(i) == 0x0)
+		{
+			printf("isTetramino\n");
+			return (0);
+		}
+		i++;
+	}
+	return (1);
+}
+
+int		checker(char *ttr)
+{
+	int		i;
+	int		cnt;
+
+	printf("checker\n");
+	i = 0;
+	cnt = -1;
+	while (ttr[i])
+	{
+		if (ttr[i] == TR)
+			g_ttr.arr[cnt++] = i;
+		i++;
+	}
+	return (isTetramino());
+}
+
+int		validation(char *ttr)
+{
+	int		i;
+	int		len;
+	int		cnt;
+
+	i = -1;
+	len = 0;
+	cnt = 0;
+				printf("validation\n");
+
+	while (ttr[++i])
+	{
+		if (ttr[i] == TR)
+			cnt++;
+		else if (ttr[i] == '.')
+			len++;
+		else
+			return (0);
+	}
+	if (cnt == 4 && len == 12)
+		return (checker(ttr));
+	return (0);
 }
 

@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   fillit.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hpowlows <hpowlows@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kaparray <kaparray@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/15 16:12:17 by hpowlows          #+#    #+#             */
-/*   Updated: 2018/12/15 22:21:11 by hpowlows         ###   ########.fr       */
+/*   Updated: 2018/12/16 10:52:48 by kaparray         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FILLIT_H
 # define FILLIT_H
 
+# include "libft/libft.h"
 # include <fcntl.h>
 # include <sys/types.h>
 # include <sys/stat.h>
@@ -49,7 +50,7 @@
 
 typedef struct	 s_ttr
 {
-	int		**arr;
+	int		*arr;
 	ssize_t	len;
 }				t_ttr;
 
@@ -61,5 +62,10 @@ typedef struct	 s_lstttr
 
 t_ttr			g_ttr;
 t_lstttr		g_lstttr;
+
+
+
+
+int		validation(char *ttr);
 
 #endif
