@@ -6,7 +6,7 @@
 /*   By: hpowlows <hpowlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/15 16:12:17 by hpowlows          #+#    #+#             */
-/*   Updated: 2018/12/16 16:12:43 by hpowlows         ###   ########.fr       */
+/*   Updated: 2018/12/16 17:52:33 by hpowlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,6 @@
 # include <sys/types.h>
 # include <sys/stat.h>
 # include <stdio.h>
-
-
-
-
-
-
 
 
 # define TR '#'
@@ -44,15 +38,15 @@
 # define T8 8		// s normal
 # define T9 9		// z normal
 # define T10 10		// s on hip
-# define T11 11		// z on hip
-# define T12 12
-# define T13 13
-# define T14 14
-# define T15 15
-# define T16 16
-# define T17 17
-# define T18 18
-# define T19 19
+ # define T11 11	// z on hip
+ # define T12 12	// j on long down
+ # define T13 13	// l on long down
+ # define T14 14	// j on sort down
+ # define T15 15	// l on short down
+ # define T16 16	// l on long up
+ # define T17 17	// j on long up
+ # define T18 18	// l on short up
+ # define T19 19 // j on short up
 
 
 typedef struct	 s_ttr
@@ -73,6 +67,11 @@ t_lstttr		g_lstttr;
 
 
 int		valid(char *ttr);
+int		type_of_tetramino(int i);
+int		is_tetramino();
+int		checker(char *ttr);
+int		valid(char *ttr);
+
 
 
 #endif

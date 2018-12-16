@@ -6,7 +6,7 @@
 /*   By: hpowlows <hpowlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/15 21:15:37 by hpowlows          #+#    #+#             */
-/*   Updated: 2018/12/16 17:39:57 by hpowlows         ###   ########.fr       */
+/*   Updated: 2018/12/16 17:53:49 by hpowlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int main(void) {
 
 	if (valid(arr) != 0x0) {
 		printf("true");
-
+		printf("%d", g_lstttr.arr[0]);
 	}
 	else
 		printf("false");
