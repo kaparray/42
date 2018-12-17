@@ -6,11 +6,7 @@
 /*   By: hpowlows <hpowlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/15 16:12:17 by hpowlows          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2018/12/17 14:01:33 by kaparray         ###   ########.fr       */
-=======
-/*   Updated: 2018/12/16 17:52:33 by hpowlows         ###   ########.fr       */
->>>>>>> 6bd8e836abd64fb224bd48b1ba700f344a58df6e
+/*   Updated: 2018/12/17 21:20:54 by hpowlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,15 +38,15 @@
 # define T8 8		// s normal
 # define T9 9		// z normal
 # define T10 10		// s on hip
- # define T11 11	// z on hip
- # define T12 12	// j on long down
- # define T13 13	// l on long down
- # define T14 14	// j on sort down
- # define T15 15	// l on short down
- # define T16 16	// l on long up
- # define T17 17	// j on long up
- # define T18 18	// l on short up
- # define T19 19 // j on short up
+# define T11 11	// z on hip
+# define T12 12	// j on long down
+# define T13 13	// l on long down
+# define T14 14	// j on sort down
+# define T15 15	// l on short down
+# define T16 16	// l on long up
+# define T17 17	// j on long up
+# define T18 18	// l on short up
+# define T19 19 // j on short up
 
 
 typedef struct	 s_ttr

@@ -3,20 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaparray <kaparray@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hpowlows <hpowlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/15 21:15:37 by hpowlows          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2018/12/17 14:02:41 by kaparray         ###   ########.fr       */
-=======
-/*   Updated: 2018/12/16 17:53:49 by hpowlows         ###   ########.fr       */
->>>>>>> 6bd8e836abd64fb224bd48b1ba700f344a58df6e
+/*   Updated: 2018/12/17 21:20:55 by hpowlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int main(void) {
+int		add_new_line(char *line)
+{
+	if (ft_strequ(line, ""))
+	{
+		line = "\n";
+	}
+}
+
+
+int		main(void) {
 
    	int     fd;
     char 	*arr;
@@ -29,6 +34,7 @@ int main(void) {
 
 	while (get_next_line(fd, &line) > 0)
 	{
+
 		arr = ft_strjoin(arr, line);
 		free(line);
 	}
