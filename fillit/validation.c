@@ -6,7 +6,7 @@
 /*   By: hpowlows <hpowlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/15 16:11:52 by hpowlows          #+#    #+#             */
-/*   Updated: 2018/12/17 21:20:53 by hpowlows         ###   ########.fr       */
+/*   Updated: 2018/12/17 22:00:13 by hpowlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,10 +91,7 @@ int		is_tetramino()
 	while (g_ttr.len > i) // TODO malloc memmory for len and update this value
 	{
 		if (type_of_tetramino(i) == 0x0)
-		{
 			return (0);
-		}
-
 		i++;
 	}
 	return (1);
@@ -140,16 +137,15 @@ int		valid(char *ttr)
 }
 
 
-int		start_validation (char *ttr)
+int		start_validation(char *ttr)
 {
 	int i;
 	int cnt;
-	int len;
-
+	size_t len;
 	i = 0;
 	cnt = 0;
 	len = ft_strlen(ttr);
-	while (i < len)
+	while (i < (int)len)
 	{
 		if (ttr[i] == '\n')
 			cnt++;
@@ -157,9 +153,9 @@ int		start_validation (char *ttr)
 			cnt = 0;
 		if (cnt > 1)
 			return (0);
-		i++:
+		i++;
 	}
-	if (ttr[len] != '\n')
+	if (ttr[len - 1] != '\n')
 		return (0);
 	return (valid(ttr));
 }
