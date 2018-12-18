@@ -6,7 +6,7 @@
 /*   By: hpowlows <hpowlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/15 16:12:17 by hpowlows          #+#    #+#             */
-/*   Updated: 2018/12/17 21:20:54 by hpowlows         ###   ########.fr       */
+/*   Updated: 2018/12/18 16:38:12 by hpowlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ t_ttr			g_ttr;
 t_lstttr		g_lstttr;
 
 
+void	reader(int fd, char *arr);
 int		valid(char *ttr);
 int		type_of_tetramino(int i);
 int		is_tetramino();

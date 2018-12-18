@@ -6,7 +6,7 @@
 /*   By: hpowlows <hpowlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/15 16:11:52 by hpowlows          #+#    #+#             */
-/*   Updated: 2018/12/17 22:00:13 by hpowlows         ###   ########.fr       */
+/*   Updated: 2018/12/18 16:44:01 by hpowlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,12 +136,18 @@ int		valid(char *ttr)
 	return (0);
 }
 
+int		separator()
+{
+
+
+}
 
 int		start_validation(char *ttr)
 {
 	int i;
 	int cnt;
 	size_t len;
+
 	i = 0;
 	cnt = 0;
 	len = ft_strlen(ttr);
@@ -149,13 +155,15 @@ int		start_validation(char *ttr)
 	{
 		if (ttr[i] == '\n')
 			cnt++;
-		else
+		else if (ttr[i] == TR || ttr[i] == '.')
 			cnt = 0;
-		if (cnt > 1)
+		else
 			return (0);
+		if (cnt > 1)
+			return (0x0);
 		i++;
 	}
 	if (ttr[len - 1] != '\n')
-		return (0);
-	return (valid(ttr));
+		return (0x0);
+	return (separator(ttr));
 }
