@@ -6,7 +6,7 @@
 /*   By: hpowlows <hpowlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/15 16:11:52 by hpowlows          #+#    #+#             */
-/*   Updated: 2018/12/18 16:44:01 by hpowlows         ###   ########.fr       */
+/*   Updated: 2018/12/18 21:38:17 by hpowlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,24 +83,27 @@ int		type_of_tetramino(int i)
 	return (1);
 }
 
-int		is_tetramino()
+int is_tetramino()
 {
 	int i;
 
 	i = 0;
-	while (g_ttr.len > i) // TODO malloc memmory for len and update this value
+	while (1 > i) // TODO malloc memmory for len and update this value
 	{
 		if (type_of_tetramino(i) == 0x0)
+		{
 			return (0);
+		}
+
 		i++;
 	}
 	return (1);
 }
 
-int		checker(char *ttr)
+int checker(char *ttr)
 {
-	int		i;
-	int		cnt;
+	int i;
+	int cnt;
 
 	i = 0;
 	cnt = -1;
@@ -113,11 +116,11 @@ int		checker(char *ttr)
 	return (is_tetramino());
 }
 
-int		valid(char *ttr)
+int valid(char *ttr)
 {
-	int		i;
-	int		len;
-	int		cnt;
+	int i;
+	int len;
+	int cnt;
 
 	i = -1;
 	len = 0;
@@ -136,34 +139,52 @@ int		valid(char *ttr)
 	return (0);
 }
 
-int		separator()
+int separator(char *ttr, int normal)
 {
+	char *tempo;
+	char *ttr2;
 
-
+	tempo = ttr2;
+	while (*ttr)
+	{
+		if (*ttr != '\n')
+		{
+			*tempo = *ttr;
+			tempo++;
+		}
+		ttr++;
+	}
+	*tempo = '\0';
+	return (valid(ttr2));
 }
 
-int		start_validation(char *ttr)
+int start_validation(char *ttr)
 {
+	int normal;
 	int i;
 	int cnt;
-	size_t len;
 
 	i = 0;
 	cnt = 0;
-	len = ft_strlen(ttr);
-	while (i < (int)len)
+	normal = 0;
+	while (ft_strlen(ttr) > cnt)
 	{
-		if (ttr[i] == '\n')
-			cnt++;
-		else if (ttr[i] == TR || ttr[i] == '.')
-			cnt = 0;
+
+		if (ttr[cnt] == '#' || ttr[cnt] == '.')
+			normal++;
+		else if (ttr[cnt] == '\n')
+			i++;
 		else
-			return (0);
-		if (cnt > 1)
 			return (0x0);
-		i++;
+		cnt++;
 	}
-	if (ttr[len - 1] != '\n')
+	if (normal > 16)
+	{
+		if (i - (normal / 4) != 1)
+			return (0x0);
+	}
+	else if (normal == 16 && i != 4)
 		return (0x0);
-	return (separator(ttr));
+
+	return (separator(ttr, normal));
 }

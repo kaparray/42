@@ -6,7 +6,7 @@
 /*   By: hpowlows <hpowlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/15 21:15:37 by hpowlows          #+#    #+#             */
-/*   Updated: 2018/12/18 17:01:38 by hpowlows         ###   ########.fr       */
+/*   Updated: 2018/12/18 21:37:34 by hpowlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,18 @@ int		main(int ac, char **av) {
 		//temporary code !!! be careful !!!
 		reader(fd, arr);
 
-		if (start_validation(arr) != 0x0) {
-			printf("true");								// This is temprary output
-			printf("%d", g_lstttr.arr[0]);				// This is temprary output
+		int a = start_validation(arr);
+		int a = start_validation(arr);
+		if (a == 0x0)
+		{
+			ft_putendl("error");
+			return (1);
 		}
 		else
-			printf("false");							// This is temprary output
+		{
+			printf("true");
+			printf("%d", g_lstttr.arr[0]);
+		}
 	}
 	else
 	{
