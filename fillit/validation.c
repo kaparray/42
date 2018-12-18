@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   validation.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hpowlows <hpowlows@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kaparray <kaparray@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/15 16:11:52 by hpowlows          #+#    #+#             */
-/*   Updated: 2018/12/18 23:18:04 by hpowlows         ###   ########.fr       */
+/*   Updated: 2018/12/19 02:03:51 by kaparray         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
+
+
 
 
 int		equ_tetramino_1(int t1, int t2, int t3, int i)
@@ -115,6 +117,8 @@ int		valid(char *ttr, int j)
     int		len;
     int		cnt;
 
+    if (ttr[0] == '\0')
+        return (1);
     i = -1;
     len = 0;
     cnt = 0;
@@ -137,22 +141,20 @@ int     tetra_separator(char *ttr, int normal)
 {
     int i;
     unsigned int cnt1;
-    unsigned int cnt2;
     int cnt;
 
     cnt = 0;
     cnt1 = 0;
-    cnt2 = 16;
     i = 0;
-    while (normal / 4 * 4 >= cnt1)
+    while (normal / 4 * 4 > cnt1)
     {
-        if (valid(ft_strsub(ttr, cnt1, cnt2), i) == 1)
+        printf("%s     %d   %d\n", ft_strsub(ttr, cnt1, 16), cnt1, 16);
+        if (valid(ft_strsub(ttr, cnt1, 16), i) == 1)
         {
             i++;
             cnt += 16;
             g_lstttr.len++;
         }
-        cnt2 += 16;
         cnt1 += 16;
 
     }
@@ -167,6 +169,7 @@ int		separator(char *ttr, int normal)
     char *tempo;
     char *ttr2;
 
+    ttr2 = ft_strnew(1);
     tempo = ttr2;
     while (*ttr)
     {
@@ -188,29 +191,27 @@ int		start_validation(char *ttr)
     int normal;
     int i;
     int cnt;
-    int a;
 
-    a = 0;
-    i = 0;
+    i = 1;
     cnt = 0;
     normal = 0;
+
     while (ft_strlen(ttr) > cnt)
     {
 
         if (ttr[cnt] == '#' || ttr[cnt] == '.' )
             normal++;
-        else if (ttr[cnt] == '\n')
+        else if (ttr[cnt] == '\n' && ttr[1 + cnt] == '\n')
             i++;
-        else
-            return (0x0);
         cnt++;
     }
-//    if (normal > 16)
-//    {
-//        if (i - (normal / 4) != a)
-//            return (0x0);
-//    }
-    if (normal == 16 && i != 4)
+//    if (ttr[0] == '\n' || ttr[cnt - 1] != '\n')
+//        return (0x0);
+//    if (normal % 16 == 0 && normal / 16 == i)
+//        return (separator(ttr, normal));
+//    return (0x0);
+    if (ttr[0] == '\n' || ttr[cnt - 1] != '\n')
         return (0x0);
-    return (separator(ttr, normal));
+    else
+        return (separator(ttr, normal));
 }
