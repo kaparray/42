@@ -6,7 +6,7 @@
 /*   By: kaparray <kaparray@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/15 16:11:52 by hpowlows          #+#    #+#             */
-/*   Updated: 2018/12/19 10:38:02 by kaparray         ###   ########.fr       */
+/*   Updated: 2018/12/19 11:10:25 by kaparray         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int equ_tetramino_1(int t1, int t2, int t3, int i)
 		g_lstttr.arr[i] = T8;
 	else if (t1 == 1 && t2 == 4 && t3 == 1)
 		g_lstttr.arr[i] = T9;
-	else if (t1 == 3 && t2 == 1 && t3 == 3)
+	else if (t1 == 4 && t2 == 1 && t3 == 4)
 		g_lstttr.arr[i] = T10;
 	else
 		return (0);
