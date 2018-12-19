@@ -6,13 +6,11 @@
 /*   By: kaparray <kaparray@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/15 16:11:52 by hpowlows          #+#    #+#             */
-/*   Updated: 2018/12/19 02:03:51 by kaparray         ###   ########.fr       */
+/*   Updated: 2018/12/19 09:28:22 by kaparray         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
-
-
 
 
 int		equ_tetramino_1(int t1, int t2, int t3, int i)
@@ -148,7 +146,6 @@ int     tetra_separator(char *ttr, int normal)
     i = 0;
     while (normal / 4 * 4 > cnt1)
     {
-        printf("%s     %d   %d\n", ft_strsub(ttr, cnt1, 16), cnt1, 16);
         if (valid(ft_strsub(ttr, cnt1, 16), i) == 1)
         {
             i++;
@@ -188,30 +185,42 @@ int		separator(char *ttr, int normal)
 
 int		start_validation(char *ttr)
 {
-    int normal;
+    int nmrl;
     int i;
     int cnt;
 
-    i = 1;
+    i = 0;
     cnt = 0;
-    normal = 0;
-
-    while (ft_strlen(ttr) > cnt)
-    {
-
-        if (ttr[cnt] == '#' || ttr[cnt] == '.' )
-            normal++;
-        else if (ttr[cnt] == '\n' && ttr[1 + cnt] == '\n')
-            i++;
-        cnt++;
-    }
-//    if (ttr[0] == '\n' || ttr[cnt - 1] != '\n')
-//        return (0x0);
-//    if (normal % 16 == 0 && normal / 16 == i)
-//        return (separator(ttr, normal));
-//    return (0x0);
-    if (ttr[0] == '\n' || ttr[cnt - 1] != '\n')
+    nmrl = 0;
+    if (ttr[i] != '#' && ttr[i] != '.')
         return (0x0);
-    else
-        return (separator(ttr, normal));
+    while (ttr[i])
+    {
+        if (ttr[i] == '#' || ttr[i] == '.')
+            nmrl++;
+
+       // printf("%d \n", ttr[]);
+        if (i > 0 && nmrl % 4 + cnt == 0 && ttr[nmrl] != '\n')
+            return (0x0);
+
+        if (i % 4 == 0)
+            cnt++;
+
+        if (nmrl % 16 != 0 && ttr[i] == '\n' && ttr[i + 1] == '\n')
+            return (0x0);
+
+        if (ttr[i] == '\n' && ttr[i + 1] == '\n' &&  ttr[i + 2] == '\n')
+            return (0x0);
+
+
+        if (nmrl % 16 == 0 && ttr[i] != '\n' && ttr[i + 1] != '\n')
+            return (0x0);
+        i++;
+    }
+
+    if ((ttr[i - 2] != '.' && ttr[i - 2] != '#') && ttr[i - 1] == '\n')
+        return (0x0);
+
+    if (nmrl % 16 == 0)
+        return (separator(ttr, nmrl));
 }
