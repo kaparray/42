@@ -6,28 +6,27 @@
 /*   By: kaparray <kaparray@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/18 16:21:17 by hpowlows          #+#    #+#             */
-/*   Updated: 2018/12/19 02:02:02 by kaparray         ###   ########.fr       */
+/*   Updated: 2018/12/19 10:36:42 by kaparray         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-
 char	*reader(int fd)
 {
-    char	    *line;
-    ssize_t		rdbl;
-    char		buff[BUFF_SIZE + 1];
-    char		*tmp;
+	char		*line;
+	ssize_t		rdbl;
+	char		buff[BUFF_SIZE + 1];
+	char		*tmp;
 
 
-    line = ft_strnew(1);
-    while ((rdbl = read(fd, buff, BUFF_SIZE)) > 0)
-    {
-        buff[rdbl] = 0;
-        tmp = line;
-        line = ft_strjoin(line, buff);
-        ft_strdel(&tmp);
-    }
-    return (line);
+	line = ft_strnew(1);
+	while ((rdbl = read(fd, buff, BUFF_SIZE)) > 0)
+	{
+		buff[rdbl] = 0;
+		tmp = line;
+		line = ft_strjoin(line, buff);
+		ft_strdel(&tmp);
+	}
+	return (line);
 }

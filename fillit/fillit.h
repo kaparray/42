@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fillit.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hpowlows <hpowlows@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kaparray <kaparray@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/15 16:12:17 by hpowlows          #+#    #+#             */
-/*   Updated: 2018/12/18 16:38:12 by hpowlows         ###   ########.fr       */
+/*   Updated: 2018/12/19 10:38:01 by kaparray         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,13 +66,16 @@ t_ttr			g_ttr;
 t_lstttr		g_lstttr;
 
 
-void	reader(int fd, char *arr);
-int		valid(char *ttr);
-int		type_of_tetramino(int i);
-int		is_tetramino();
-int		checker(char *ttr);
-int		valid(char *ttr);
-
+char	*reader(int fd);
+int start_validation(char *ttr);
+int separator(char *ttr, int normal);
+int tetra_separator(char *ttr, int normal);
+int valid(char *ttr, int j);
+int checker(char *ttr, int j);
+int is_tetramino(int j);
+int type_of_tetramino(int i);
+int equ_tetramino_2(int t1, int t2, int t3, int i);
+int equ_tetramino_1(int t1, int t2, int t3, int i);
 
 
 #endif
