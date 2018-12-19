@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fillit.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaparray <kaparray@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hpowlows <hpowlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/15 16:12:17 by hpowlows          #+#    #+#             */
-/*   Updated: 2018/12/19 11:10:23 by kaparray         ###   ########.fr       */
+/*   Updated: 2018/12/19 16:27:33 by hpowlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@
 # define T4 4		// 3 + 1 right
 # define T5 5		// 4 little square in row
 # define T6 6		// 4 little square in column
-# define T7 7		// square
+# define T7 7		// square []
 # define T8 8		// s normal
 # define T9 9		// z normal
 # define T10 10		// s on hip

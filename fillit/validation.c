@@ -6,7 +6,7 @@
 /*   By: hpowlows <hpowlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/15 16:11:52 by hpowlows          #+#    #+#             */
-/*   Updated: 2018/12/19 15:09:13 by hpowlows         ###   ########.fr       */
+/*   Updated: 2018/12/19 16:27:27 by hpowlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int equ_tetramino_2(int t1, int t2, int t3, int i)
 {
 	if (t1 == 3 && t2 == 1 && t3 == 3)
 		g_lstttr.arr[i] = T11;
-	else if (t1 == 1 && t2 == 1 && t3 == 2)
+	else if (t1 == 4 && t2 == 4 && t3 == 1)
 		g_lstttr.arr[i] = T12;
 	else if (t1 == 2 && t2 == 1 && t3 == 1)
 		g_lstttr.arr[i] = T13;
@@ -53,7 +53,7 @@ int equ_tetramino_2(int t1, int t2, int t3, int i)
 		g_lstttr.arr[i] = T15;
 	else if (t1 == 1 && t2 == 1 && t3 == 2)
 		g_lstttr.arr[i] = T16;
-	else if (t1 == 4 && t2 == 1 && t3 == 1)
+	else if (t1 == 1 && t2 == 1 && t3 == 4)
 		g_lstttr.arr[i] = T17;
 	else if (t1 == 1 && t2 == 4 && t3 == 4)
 		g_lstttr.arr[i] = T18;
@@ -174,7 +174,7 @@ int separator(char *ttr, int normal)
 	return (tetra_separator(ttr2, normal));
 }
 
-int start_validation(char *ttr)
+int		start_validation(char *ttr)
 {
 	int nmrl;
 	int i;
@@ -205,4 +205,5 @@ int start_validation(char *ttr)
 		return (0x0);
 	if (nmrl % 16 == 0)
 		return (separator(ttr, nmrl));
+	return (0x0);
 }

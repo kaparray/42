@@ -2,6 +2,7 @@
 FLAGS = -g -Wall -Wextra -Werror
 NAME = fillit
 FILES = validation.c\
+		reader.c\
 		main.c\
 		libft/ft_strjoin.c\
 		libft/ft_strnew.c\
@@ -12,18 +13,22 @@ FILES = validation.c\
 		libft/ft_strdup.c\
 		libft/ft_strlen.c\
 		libft/ft_strsub.c\
-		libft/ft_memcpy.c
+		libft/ft_memcpy.c\
+		libft/ft_putchar.c\
+		libft/ft_putstr.c\
+		libft/ft_putendl.c
+
 
 
 OBJ = $(FILES:%.c=%.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
+$(NAME):
 		clang -o $(NAME) $(FILES) -I fullit.h -L libft/ -lft
-
-$(OBJ): $(FILES)
 		clang $(FLAFS) -I fillit.h  $(FILES)
+
+
 
 clean:
 		rm -f $(OBJ)

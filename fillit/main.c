@@ -6,7 +6,7 @@
 /*   By: hpowlows <hpowlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/15 21:15:37 by hpowlows          #+#    #+#             */
-/*   Updated: 2018/12/18 23:17:48 by hpowlows         ###   ########.fr       */
+/*   Updated: 2018/12/19 16:27:16 by hpowlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ int		main(int ac, char **av) {
 		fd = open(av[1], O_RDONLY);
 
 		//temporary code !!! be careful !!!
-		reader(fd, arr);
+		arr = reader(fd);
 
 		int a = start_validation(arr);
-		int a = start_validation(arr);
+		//int a = start_validation(arr);
 		if (a == 0x0)
 		{
 			ft_putendl("error");
@@ -39,7 +39,7 @@ int		main(int ac, char **av) {
 		else
 		{
 			printf("true");
-			printf("%d", g_lstttr.arr[0]);
+			printf("%d	%d	%d	%d", g_lstttr.arr[0], g_lstttr.arr[1], g_lstttr.arr[2], g_lstttr.arr[3]);
 		}
 	}
 	else
