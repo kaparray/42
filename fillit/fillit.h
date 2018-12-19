@@ -6,7 +6,7 @@
 /*   By: hpowlows <hpowlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/15 16:12:17 by hpowlows          #+#    #+#             */
-/*   Updated: 2018/12/19 16:27:33 by hpowlows         ###   ########.fr       */
+/*   Updated: 2018/12/19 16:41:06 by hpowlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,33 +49,28 @@
 # define T19 19 // j on short up
 
 
-typedef struct	 s_ttr
-{
-	int		*arr;
-	ssize_t	len;
-}				t_ttr;
 
 typedef struct	 s_lstttr
 {
-	int		*arr;
-	ssize_t	len;
+	int			*arr;
+	ssize_t		len;
 }				t_lstttr;
 
 
-t_ttr			g_ttr;
+int				*g_ttr;
 t_lstttr		g_lstttr;
 
 
-char	*reader(int fd);
-int start_validation(char *ttr);
-int separator(char *ttr, int normal);
-int tetra_separator(char *ttr, int normal);
-int valid(char *ttr, int j);
-int checker(char *ttr, int j);
-int is_tetramino(int j);
-int type_of_tetramino(int i);
-int equ_tetramino_2(int t1, int t2, int t3, int i);
-int equ_tetramino_1(int t1, int t2, int t3, int i);
+char			*reader(int fd);
+int				start_validation(char *ttr);
+int				separator(char *ttr, int normal);
+int				tetra_separator(char *ttr, int normal);
+int				valid(char *ttr, int j);
+int				checker(char *ttr, int j);
+int				is_tetramino(int j);
+int				type_of_tetramino(int i);
+int				equ_tetramino_2(int t1, int t2, int t3, int i);
+int				equ_tetramino_1(int t1, int t2, int t3, int i);
 
 
 #endif

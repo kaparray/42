@@ -6,7 +6,7 @@
 /*   By: hpowlows <hpowlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/15 16:11:52 by hpowlows          #+#    #+#             */
-/*   Updated: 2018/12/19 16:27:27 by hpowlows         ###   ########.fr       */
+/*   Updated: 2018/12/19 16:48:45 by hpowlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,9 +70,9 @@ int type_of_tetramino(int i)
 	int t2;
 	int t3;
 
-	t3 = g_ttr.arr[3] - g_ttr.arr[2];
-	t2 = g_ttr.arr[2] - g_ttr.arr[1];
-	t1 = g_ttr.arr[1] - g_ttr.arr[0];
+	t3 = g_ttr[3] - g_ttr[2];
+	t2 = g_ttr[2] - g_ttr[1];
+	t1 = g_ttr[1] - g_ttr[0];
 	if (equ_tetramino_1(t1, t2, t3, i))
 		return (1);
 	else if (equ_tetramino_2(t1, t2, t3, i))
@@ -99,7 +99,7 @@ int checker(char *ttr, int j)
 	while (ttr[i])
 	{
 		if (ttr[i] == TR)
-			g_ttr.arr[++cnt] = i;
+			g_ttr[++cnt] = i;
 		i++;
 	}
 	return (is_tetramino(j));
@@ -139,7 +139,7 @@ int tetra_separator(char *ttr, int normal)
 	cnt = 0;
 	cnt1 = 0;
 	i = 0;
-	while (normal / 4 * 4 > cnt1)
+	while (normal / 4 * 4 > (int)cnt1)
 	{
 		if (valid(ft_strsub(ttr, cnt1, 16), i) == 1)
 		{

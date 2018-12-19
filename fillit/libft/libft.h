@@ -6,7 +6,7 @@
 /*   By: hpowlows <hpowlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 20:12:39 by hpowlows          #+#    #+#             */
-/*   Updated: 2018/12/10 18:50:42 by hpowlows         ###   ########.fr       */
+/*   Updated: 2018/12/19 16:40:09 by hpowlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ int					ft_strequ(char const *s1, char const *s2);
 int					ft_strnequ(char const *s1, char const *s2, size_t n);
 char				*ft_strsub(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
-char                *ft_strjoinch(char const *s1, char c);
+char				*ft_strjoinch(char const *s1, char c);
 char				*ft_itoa(int n);
 void				ft_putendl(char const *s);
 void				ft_putnbr(int n);

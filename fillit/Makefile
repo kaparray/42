@@ -1,41 +1,35 @@
 
-FLAGS = -g -Wall -Wextra -Werror
 NAME = fillit
-FILES = validation.c\
+SRC = validation.c\
 		reader.c\
-		main.c\
-		libft/ft_strjoin.c\
-		libft/ft_strnew.c\
-		libft/get_next_line.c\
-		libft/ft_bzero.c\
-		libft/ft_strchr.c\
-		libft/ft_strdel.c\
-		libft/ft_strdup.c\
-		libft/ft_strlen.c\
-		libft/ft_strsub.c\
-		libft/ft_memcpy.c\
-		libft/ft_putchar.c\
-		libft/ft_putstr.c\
-		libft/ft_putendl.c
+		main.c
 
+OBJ = $(SRC:.c=.o)
 
-
-OBJ = $(FILES:%.c=%.o)
+CFLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
-$(NAME):
-		clang -o $(NAME) $(FILES) -I fullit.h -L libft/ -lft
-		clang $(FLAFS) -I fillit.h  $(FILES)
+$(NAME): libft/libft.a $(OBJ)
+	gcc $(OBJ) libft/libft.a -I libft -o $(NAME)
 
-
+%.o: %.c fillit.h
+	gcc $(CFLAGS) -c -o $@ $<
 
 clean:
-		rm -f $(OBJ)
+	rm -f $(OBJ)
+	make clean -C libft
 
 fclean: clean
-		rm -f $(NAME)
+	rm -f $(NAME)
+	rm -f libft/libft.a
 
 re: fclean all
+
+# analize: libft/libft.a
+# 	gcc -Wall -Wextra -pedantic -Werror -Winit-self -Wunreachable-code -Wformat-y2k -Wformat-nonliteral -Wformat-security -Wformat=2 -Wmissing-include-dirs -Wswitch-default -Wtrigraphs -Wstrict-overflow=5 -Wfloat-equal -Wundef -Wshadow -Wbad-function-cast $(CFLAGS) $(SRC) libft/libft.a -I libft/libft.h -o fillit
+
+libft/libft.a:
+	make -C libft
 
 .PHONY: clean fclean all re

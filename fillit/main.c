@@ -6,7 +6,7 @@
 /*   By: hpowlows <hpowlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/15 21:15:37 by hpowlows          #+#    #+#             */
-/*   Updated: 2018/12/19 16:27:16 by hpowlows         ###   ########.fr       */
+/*   Updated: 2018/12/19 16:48:45 by hpowlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,11 @@ int		main(int ac, char **av) {
 
 	int		fd;
 	char 	*arr;
-	char	*line;
-
 
 	if (ac == 2)
 	{
 		arr = ft_strnew(1);
-		g_ttr.arr = malloc(sizeof(int) * 4);
+		g_ttr = malloc(sizeof(int) * 4);
 		g_lstttr.arr = malloc(sizeof(int) * 1);
 		fd = open(av[1], O_RDONLY);
 
