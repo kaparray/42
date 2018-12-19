@@ -6,7 +6,7 @@
 /*   By: kaparray <kaparray@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/18 16:21:17 by hpowlows          #+#    #+#             */
-/*   Updated: 2018/12/19 10:36:42 by kaparray         ###   ########.fr       */
+/*   Updated: 2018/12/19 11:18:33 by kaparray         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ char	*reader(int fd)
 	ssize_t		rdbl;
 	char		buff[BUFF_SIZE + 1];
 	char		*tmp;
-
 
 	line = ft_strnew(1);
 	while ((rdbl = read(fd, buff, BUFF_SIZE)) > 0)
