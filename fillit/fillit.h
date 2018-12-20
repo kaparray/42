@@ -6,7 +6,7 @@
 /*   By: hpowlows <hpowlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/15 16:12:17 by hpowlows          #+#    #+#             */
-/*   Updated: 2018/12/19 16:41:06 by hpowlows         ###   ########.fr       */
+/*   Updated: 2018/12/20 18:51:24 by hpowlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ t_lstttr		g_lstttr;
 
 
 char			*reader(int fd);
+int				loop_validation(int *cnt, int *nmrl, char *ttr, int i);
 int				start_validation(char *ttr);
 int				separator(char *ttr, int normal);
 int				tetra_separator(char *ttr, int normal);

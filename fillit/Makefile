@@ -1,6 +1,7 @@
 
 NAME = fillit
 SRC = validation.c\
+		validation2.c\
 		reader.c\
 		main.c
 
