@@ -6,118 +6,85 @@
 /*   By: hpowlows <hpowlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/15 16:11:52 by hpowlows          #+#    #+#             */
-/*   Updated: 2018/12/20 18:51:57 by hpowlows         ###   ########.fr       */
+/*   Updated: 2018/12/21 22:47:43 by hpowlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int		valid(char *ttr, int j)
+
+int		test_3(char *s)
 {
 	int i;
-	int len;
-	int cnt;
+	int hash;
+	int point;
+	int endline;
 
-	if (ttr[0] == '\0')
-		return (1);
-	i = -1;
-	len = 0;
-	cnt = 0;
-	while (ttr[++i])
-	{
-		if (ttr[i] == TR)
-			cnt++;
-		else if (ttr[i] == '.')
-			len++;
-		else
-			return (0);
-	}
-	if (cnt == 4 && len == 12)
-		return (checker(ttr, j));
-	return (0);
-}
-
-int		tetra_separator(char *ttr, int normal)
-{
-	int				i;
-	int				cnt;
-	unsigned int	cnt1;
-
-	cnt = 0;
-	cnt1 = 0;
 	i = 0;
-	while (normal / 4 * 4 > (int)cnt1)
+	hash = 0;
+	point = 0;
+	endline = 0;
+	while (s[i] != '\0')
 	{
-		if (valid(ft_strsub(ttr, cnt1, 16), i) == 1)
-		{
-			i++;
-			cnt += 16;
-			g_lstttr.len++;
-		}
-		cnt1 += 16;
+		if (s[i] == '#')
+			hash++;
+		if (s[i] == '.')
+			point++;
+		if (s[i] == '\n')
+			endline++;
+		if (s[i] != '#' && s[i] != '.' && s[i] != '\n')
+			return (0);
+		i++;
 	}
-	if (cnt == normal / 4 * 4)
-		return (1);
-	return (0x0);
-}
-
-int		separator(char *ttr, int normal)
-{
-	char	*tempo;
-	char	*ttr2;
-
-	ttr2 = ft_strnew(1);
-	tempo = ttr2;
-	while (*ttr)
-	{
-		if (*ttr != '\n')
-		{
-			*tempo = *ttr;
-			tempo++;
-		}
-		ttr++;
-	}
-	*tempo = '\0';
-	return (tetra_separator(ttr2, normal));
-}
-
-int		loop_validation(int *cnt, int *nmrl, char *ttr, int i)
-{
-	if (ttr[i] == '#' || ttr[i] == '.')
-		*nmrl += 1;
-	if (i > 0 && *nmrl % 4 + cnt == 0 && ttr[*nmrl] != '\n')
-		return (0x0);
-	if (i % 4 == 0)
-		*cnt += 1;
-	if (*nmrl % 16 != 0 && ttr[i] == '\n' && ttr[i + 1] == '\n')
-		return (0x0);
-	if (ttr[i] == '\n' && ttr[i + 1] == '\n' && ttr[i + 2] == '\n')
-		return (0x0);
-	if (*nmrl % 16 == 0 && ttr[i] != '\n' && ttr[i + 1] != '\n')
-		return (0x0);
+	if (hash != 4 || point != 12 || endline != 4)
+		return (0);
 	return (1);
 }
 
-int		start_validation(char *ttr)
+int		test_2(char *s)
 {
-	int nmrl;
 	int i;
-	int cnt;
+	int j;
+	int add_5;
 
 	i = 0;
-	cnt = 0;
-	nmrl = 0;
-	if (ttr[i] != '#' && ttr[i] != '.')
-		return (0x0);
-	while (ttr[i])
+	j = 0;
+	add_5 = 4;
+	while (s[i] != '\0')
 	{
-		if (loop_validation(&cnt, &nmrl, ttr, i) == 0x0)
-			return (0x0);
+		if (s[i] == '.' || s[i] == '#')
+			j++;
+		if (j > 4)
+			return (0);
+		if (s[i] == '\n' && i == add_5)
+		{
+			j = 0;
+			add_5 += 5;
+		}
 		i++;
 	}
-	if ((ttr[i - 2] != '.' && ttr[i - 2] != '#') && ttr[i - 1] == '\n')
-		return (0x0);
-	if (nmrl % 16 == 0)
-		return (separator(ttr, nmrl));
-	return (0x0);
+	return (1);
+}
+
+int		test_1(char *s)
+{
+	int i;
+	char *a;
+
+	i = 0;
+	if (s[i] != '.' && s[i] != '#')
+		return (0);
+	while (s[i])
+	{
+		a = ft_strsub(s, i, 20);
+		if (test_3(a) == 0 && test_2(a) == 0)
+			return (0);
+		i += 21;
+	}
+	printf("%d       %d      %d\n", s[i - 2], s[i - 1], s[i]);
+	if (s[i] == '\0' && s[i - 1] == '\n' && (s[i - 2] == '#' || s[i - 2] == '.'))
+		return (1);
+	else
+		return (0);
+	return (1);
 }

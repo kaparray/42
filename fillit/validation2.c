@@ -6,7 +6,7 @@
 /*   By: hpowlows <hpowlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/20 18:49:24 by hpowlows          #+#    #+#             */
-/*   Updated: 2018/12/20 18:51:58 by hpowlows         ###   ########.fr       */
+/*   Updated: 2018/12/21 20:55:21 by hpowlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,45 +62,4 @@ int		equ_tetramino_2(int t1, int t2, int t3, int i)
 	else
 		return (0);
 	return (1);
-}
-
-int		type_of_tetramino(int i)
-{
-	int t1;
-	int t2;
-	int t3;
-
-	t3 = g_ttr[3] - g_ttr[2];
-	t2 = g_ttr[2] - g_ttr[1];
-	t1 = g_ttr[1] - g_ttr[0];
-	if (equ_tetramino_1(t1, t2, t3, i))
-		return (1);
-	else if (equ_tetramino_2(t1, t2, t3, i))
-		return (1);
-	else
-		return (0x0);
-	return (1);
-}
-
-int		is_tetramino(int j)
-{
-	if (type_of_tetramino(j) == 0x0)
-		return (0);
-	return (1);
-}
-
-int		checker(char *ttr, int j)
-{
-	int i;
-	int cnt;
-
-	i = 0;
-	cnt = -1;
-	while (ttr[i])
-	{
-		if (ttr[i] == TR)
-			g_ttr[++cnt] = i;
-		i++;
-	}
-	return (is_tetramino(j));
 }
