@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fillit.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hpowlows <hpowlows@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mmraz <mmraz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/15 16:12:17 by hpowlows          #+#    #+#             */
-/*   Updated: 2018/12/20 18:51:24 by hpowlows         ###   ########.fr       */
+/*   Updated: 2018/12/21 17:20:58 by mmraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,25 +28,25 @@
  *
 */
 
-# define T1 1		// 3 + 1 up
-# define T2 2		// 3 + 1 down
-# define T3 3		// 3 + 1 left
-# define T4 4		// 3 + 1 right
-# define T5 5		// 4 little square in row
-# define T6 6		// 4 little square in column
-# define T7 7		// square []
-# define T8 8		// s normal
-# define T9 9		// z normal
-# define T10 10		// s on hip
-# define T11 11	// z on hip
-# define T12 12	// j on long down
-# define T13 13	// l on long down
-# define T14 14	// j on sort down
-# define T15 15	// l on short down
-# define T16 16	// l on long up
-# define T17 17	// j on long up
-# define T18 18	// l on short up
-# define T19 19 // j on short up
+# define T1 411		// 3 + 1 up
+# define T2 114		// 3 + 1 down
+# define T3 415		// 3 + 1 left
+# define T4 514		// 3 + 1 right
+# define T5 555		// 4 little square in row
+# define T6 111		// 4 little square in column
+# define T7 141		// square []
+# define T8 131		// s normal
+# define T9 151		// z normal
+# define T10 515		// s on hip
+# define T11 414	// z on hip
+# define T12 511	// j on long down
+# define T13 311	// l on long down
+# define T14 541	// j on sort down
+# define T15 551	// l on short down
+# define T16 113	// l on long up
+# define T17 115	// j on long up
+# define T18 155	// l on short up
+# define T19 145 // j on short up
 
 
 
@@ -72,6 +72,25 @@ int				is_tetramino(int j);
 int				type_of_tetramino(int i);
 int				equ_tetramino_2(int t1, int t2, int t3, int i);
 int				equ_tetramino_1(int t1, int t2, int t3, int i);
+
+
+// Solution
+void	ft_swap(int *a, int *b);
+void	ft_sort_pos_int(int *arr);
+unsigned char				*ft_filler(int *ttr, ssize_t len);
+int		*ft_decoder(size_t side, int tet, int i);
+//static void		cosa(int **aux_tetrim, int *aux, int **min);
+//static int		update_aux_tetrim(int **aux_tetrim,
+//		unsigned char *sqr, unsigned int side, int *tetrim);
+void			ft_dealer(unsigned char *sqr,
+		unsigned int side, int *tetrim, int **aux_tetrim);
+void	*fill_sqr(void *dest, size_t n, size_t size);
+int	ft_erase(unsigned char *sqr, unsigned int side,
+		unsigned int pos, int *tetrim);
+int			ft_fill(unsigned char *sqr, size_t side, int tet, unsigned int pos);
+//static unsigned int			min_square(unsigned int *len_pos, int *tetrim);
+//static int					*memaux_tetrim(unsigned int len_tet, int **cosa);
+//static unsigned char		*memsqr(unsigned int side);
 
 
 #endif

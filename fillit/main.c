@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hpowlows <hpowlows@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mmraz <mmraz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/15 21:15:37 by hpowlows          #+#    #+#             */
-/*   Updated: 2018/12/19 16:48:45 by hpowlows         ###   ########.fr       */
+/*   Updated: 2018/12/21 17:20:56 by mmraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,15 +36,16 @@ int		main(int ac, char **av) {
 		}
 		else
 		{
+			
 			printf("true");
-			printf("%d	%d	%d	%d", g_lstttr.arr[0], g_lstttr.arr[1], g_lstttr.arr[2], g_lstttr.arr[3]);
+			//printf("%d	%d	%d	%d", g_lstttr.arr[0], g_lstttr.arr[1], g_lstttr.arr[2], g_lstttr.arr[3]);
 		}
+		ft_putstr((const char *)ft_filler(g_lstttr.arr, g_lstttr.len));
 	}
 	else
 	{
 		ft_putendl("usage");
 		return (1);
 	}
-
 	return (0);
 }

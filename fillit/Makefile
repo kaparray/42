@@ -3,7 +3,13 @@ NAME = fillit
 SRC = validation.c\
 		validation2.c\
 		reader.c\
-		main.c
+		main.c\
+	  	ft_filler.c \
+	  	ft_decoder.c \
+	  	ft_fill.c \
+	  	ft_memset_fillit.c \
+	  	ft_erase.c \
+	  	ft_dealer.c
 
 OBJ = $(SRC:.c=.o)
 
@@ -12,10 +18,10 @@ CFLAGS = -Wall -Wextra -Werror
 all: $(NAME)
 
 $(NAME): libft/libft.a $(OBJ)
-	gcc $(OBJ) libft/libft.a -I libft -o $(NAME)
+	gcc -g $(OBJ) libft/libft.a -I libft -o $(NAME)
 
 %.o: %.c fillit.h
-	gcc $(CFLAGS) -c -o $@ $<
+	gcc -g $(CFLAGS) -c -o $@ $<
 
 clean:
 	rm -f $(OBJ)
