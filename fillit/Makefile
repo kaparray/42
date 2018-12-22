@@ -18,10 +18,10 @@ CFLAGS = -Wall -Wextra -Werror
 all: $(NAME)
 
 $(NAME): libft/libft.a $(OBJ)
-	gcc -g $(OBJ) libft/libft.a -I libft -o $(NAME)
+	gcc $(OBJ) libft/libft.a -I libft -o $(NAME)
 
 %.o: %.c fillit.h
-	gcc -g $(CFLAGS) -c -o $@ $<
+	gcc $(CFLAGS) -c -o $@ $<
 
 clean:
 	rm -f $(OBJ)

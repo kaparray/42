@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fillit.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmraz <mmraz@student.42.fr>                +#+  +:+       +#+        */
+/*   By: hpowlows <hpowlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/15 16:12:17 by hpowlows          #+#    #+#             */
-/*   Updated: 2018/12/21 17:20:58 by mmraz            ###   ########.fr       */
+/*   Updated: 2018/12/22 23:58:06 by hpowlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 
 
 # define TR '#'
+# define nn 20
 
 /**
  *
@@ -52,27 +53,19 @@
 
 typedef struct	 s_lstttr
 {
-	int			*arr;
+	int			arr[126];
 	ssize_t		len;
 }				t_lstttr;
 
 
-int				*g_ttr;
+int				g_ttr[126];
 t_lstttr		g_lstttr;
 
 
 char			*reader(int fd);
-int				loop_validation(int *cnt, int *nmrl, char *ttr, int i);
-int				start_validation(char *ttr);
-int				separator(char *ttr, int normal);
-int				tetra_separator(char *ttr, int normal);
-int				valid(char *ttr, int j);
-int				checker(char *ttr, int j);
-int				is_tetramino(int j);
-int				type_of_tetramino(int i);
-int				equ_tetramino_2(int t1, int t2, int t3, int i);
-int				equ_tetramino_1(int t1, int t2, int t3, int i);
-
+int		validation(char *s);
+int		test_1(char *s);
+int		valid_figure(char *s);
 
 // Solution
 void	ft_swap(int *a, int *b);
