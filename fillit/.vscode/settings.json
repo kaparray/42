@@ -1,8 +1,0 @@
-{
-	"files.associations": {
-		"fillit.h": "c",
-		"libft.h": "c",
-		"stdio.h": "c",
-		"types.h": "c"
-	}
-}

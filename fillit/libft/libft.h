@@ -6,24 +6,20 @@
 /*   By: hpowlows <hpowlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 20:12:39 by hpowlows          #+#    #+#             */
-/*   Updated: 2018/12/19 16:40:09 by hpowlows         ###   ########.fr       */
+/*   Updated: 2018/12/23 20:36:41 by hpowlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-
-
 # include <stdlib.h>
 # include <unistd.h>
 # include <string.h>
 
-
 # define WHITESPACED(a) a == ' ' || a == '\n' || a == '\t'
 # define BUFF_SIZE 42
 # define FD_LIMIT 2147483647
-
 
 typedef struct		s_list
 {

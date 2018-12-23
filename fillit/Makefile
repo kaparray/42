@@ -1,15 +1,10 @@
 
 NAME = fillit
-SRC = validation.c\
-		validation2.c\
-		reader.c\
-		main.c\
-	  	ft_filler.c \
-	  	ft_decoder.c \
-	  	ft_fill.c \
-	  	ft_memset_fillit.c \
-	  	ft_erase.c \
-	  	ft_dealer.c
+SRC = main.c\
+		ft_seperator.c\
+		ft_read.c\
+		ft_cheacker.c\
+		ft_map_generation.c
 
 OBJ = $(SRC:.c=.o)
 
