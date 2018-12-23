@@ -6,7 +6,7 @@
 /*   By: hpowlows <hpowlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/15 16:12:17 by hpowlows          #+#    #+#             */
-/*   Updated: 2018/12/23 16:51:37 by hpowlows         ###   ########.fr       */
+/*   Updated: 2018/12/23 18:30:20 by hpowlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,10 @@
 # include <sys/stat.h>
 # include <stdio.h>
 
+int		g_piece;
 
+
+int		ft_piece_check(char *str, int h, int nl, int d);
+int		ft_island_check(char *str, int c, int i, int d);
 
 #endif
