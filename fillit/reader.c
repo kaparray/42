@@ -6,26 +6,32 @@
 /*   By: hpowlows <hpowlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/18 16:21:17 by hpowlows          #+#    #+#             */
-/*   Updated: 2018/12/22 17:07:34 by hpowlows         ###   ########.fr       */
+/*   Updated: 2018/12/23 17:04:32 by hpowlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-char	*reader(int fd)
+char	*ft_reader(int a, char *arr)
 {
-	char		*line;
-	ssize_t		rdbl;
-	char		buff[BUFF_SIZE + 1];
-	char		*tmp;
+	int fd;
+	char buf;
+	char *dst;
 
-	line = ft_strnew(1);
-	while ((rdbl = read(fd, buff, BUFF_SIZE)) > 0)
+	fd = open(arr, 0x0000);
+	while (read(fd, &buf, 1))
+		a++;
+	if (a < 20)
 	{
-		buff[rdbl] = 0;
-		tmp = line;
-		line = ft_strjoin(line, buff);
-		ft_strdel(&tmp);
+		ft_putstr("error\n");
+		exit(0);
 	}
-	return (line);
+	dst = ft_strnew(a);
+	close(fd);
+	a = 0;
+	fd = open(arr, 0x0000);
+	while (read(fd, &buf, 1))
+		dst[a++] = buf;
+	close(fd);
+	return (dst);
 }
