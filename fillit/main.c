@@ -6,27 +6,31 @@
 /*   By: hpowlows <hpowlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/15 21:15:37 by hpowlows          #+#    #+#             */
-/*   Updated: 2018/12/23 17:38:59 by hpowlows         ###   ########.fr       */
+/*   Updated: 2018/12/23 20:41:44 by hpowlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int		main(int ac, char **av) {
-	char *arr;
-	char **pieces;
-	char *map;
-	size_t size;
+int		main(int ac, char **av)
+{
+	char	*arr;
+	char	**pieces;
+	char	*map;
+	int		size;
 
 	size = 0;
 	if (ac == 2)
 	{
 		arr = ft_reader(av[1], 0);
-		pieces = ft_seporatr(arr, 'A');
+		pieces = ft_seperator(arr, 0x41);
+		while (size * size < g_piece * 4)
+			size += 1;
+		map = ft_strnew(size * (size + 1));
+		ft_map_gnrtion(map, pieces, -1, size);
+		ft_putchar(0x0a);
 	}
 	else
-	{
-		ft_putstr("usage");
-	}
-
+		ft_putstr("usage\n");
+	return (0);
 }
