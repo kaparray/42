@@ -6,7 +6,7 @@
 /*   By: hpowlows <hpowlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/23 17:15:15 by hpowlows          #+#    #+#             */
-/*   Updated: 2018/12/23 17:31:41 by hpowlows         ###   ########.fr       */
+/*   Updated: 2018/12/23 18:36:47 by hpowlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,16 @@ int		ft_piece_check(char *str, int h, int nl, int d)
 		&& (i + 1) % 21 == 0) ? 1 : 0);
 }
 
-int		ft_island_check()
+int		ft_island_check(char *str, int c, int i, int d)
 {
-
+	while (str[++i])
+		if (str[i] == 0x7e || str[i] == c)
+		{
+			str[i] = c;
+			(str[i - 1] && (str[i - 1] == 0x7e || str[i - 1] == c)) ? d++ : d;
+			(str[i + 1] && (str[i + 1] == 0x7e || str[i + 1] == c)) ? d++ : d;
+			(str[i - 5] && (str[i - 5] == 0x7e || str[i - 5] == c)) ? d++ : d;
+			(str[i + 5] && (str[i + 5] == 0x7e || str[i + 5] == c)) ? d++ : d;
+		}
+	return ((d == 6 || d == 8) ? 1 : 0);
 }

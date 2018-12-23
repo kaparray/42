@@ -1,37 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   reader.c                                           :+:      :+:    :+:   */
+/*   ft_map_generation.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hpowlows <hpowlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/18 16:21:17 by hpowlows          #+#    #+#             */
-/*   Updated: 2018/12/23 17:04:32 by hpowlows         ###   ########.fr       */
+/*   Created: 2018/12/23 18:40:08 by hpowlows          #+#    #+#             */
+/*   Updated: 2018/12/23 18:47:27 by hpowlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-char	*ft_reader(int a, char *arr)
+void	ft_map_gnrtion(char *map, char **pieces, int a, size_t size)
 {
-	int fd;
-	char buf;
-	char *dst;
-
-	fd = open(arr, 0x0000);
-	while (read(fd, &buf, 1))
-		a++;
-	if (a < 20)
+	while (1)
 	{
-		ft_putstr("error\n");
-		exit(0);
+		a = -1;
+		while (++a < (size + 1))
+			map[a] = (a % (size + 1) == size) ? 0x0a : 0x2e;
+		map[a] = 0x0;
+		if (!ft_solver(map, pieces, -1))
+		{
+			size++;
+			map = ft_strnew(size * (size + 1));
+		}
+		else
+		{
+			ft_putstr(map);
+			exit(0);
+		}
 	}
-	dst = ft_strnew(a);
-	close(fd);
-	a = 0;
-	fd = open(arr, 0x0000);
-	while (read(fd, &buf, 1))
-		dst[a++] = buf;
-	close(fd);
-	return (dst);
 }
