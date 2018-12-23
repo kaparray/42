@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_map_generation.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hpowlows <hpowlows@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kaparray <kaparray@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/23 18:40:08 by hpowlows          #+#    #+#             */
-/*   Updated: 2018/12/23 20:36:38 by hpowlows         ###   ########.fr       */
+/*   Updated: 2018/12/24 00:19:54 by kaparray         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,8 @@ int		ft_drop(char *str, char *new, int i)
 	{
 		if (!str[i] && x != 3)
 			break ;
-		(new[j] == '\n' && x == 3) ? i-- : i;
-		(new[j] == '\n' && x != 4 && x != 3) ? i += (x - 4) : i;
+		(new[j] == 0x0a && x == 3) ? i-- : i;
+		(new[j] == 0x0a && x != 4 && x != 3) ? i += (x - 4) : i;
 		str[i] = (str[i] == 0x2e && new[j] > 64) ? new[j] : str[i];
 		i++;
 		j++;

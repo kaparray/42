@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_cheacker.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hpowlows <hpowlows@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kaparray <kaparray@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/23 17:15:15 by hpowlows          #+#    #+#             */
-/*   Updated: 2018/12/23 20:41:17 by hpowlows         ###   ########.fr       */
+/*   Updated: 2018/12/24 00:19:02 by kaparray         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int		ft_piece_check(char *str, int hex, int nl, int d)
 		(str[i] == 0x2e) ? d++ : d;
 		(str[i] == 0x0a) ? nl++ : nl;
 		if (i + 1 == 21)
-			if (str[i] != '\n')
+			if (str[i] != 0x0a)
 				return (0);
 		i++;
 	}
