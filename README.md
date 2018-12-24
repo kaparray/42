@@ -2,6 +2,10 @@
 
 42 - This is a innovation school of programming for all people around the world 18-30 years old.
 
+**For installation:**
+```
+git clone https://github.com/kaparray/42
+```
 
 ### All my projects in Ecole 42
 - [X] Piscine Reloaded
