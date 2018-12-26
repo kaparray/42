@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_map_generation.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaparray <kaparray@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hpowlows <hpowlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/23 18:40:08 by hpowlows          #+#    #+#             */
-/*   Updated: 2018/12/24 11:38:36 by kaparray         ###   ########.fr       */
+/*   Updated: 2018/12/26 20:33:53 by hpowlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,7 @@ void	ft_map_gnrtion(char *map, char **pieces, int x, int size)
 		}
 		else
 		{
+			map[ft_strlen(map) - 1] = 0x0;
 			ft_putstr(map);
 			exit(0);
 		}
