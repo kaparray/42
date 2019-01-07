@@ -21,4 +21,4 @@ git clone https://github.com/kaparray/42
 | ------------------ | ------- |
 | Piscine Reloaded   |   100   |
 |       Libft        |   125   |
-|      Fillit        |    0    |
+|      Fillit        |   100   |
