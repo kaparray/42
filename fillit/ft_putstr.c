@@ -1,32 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmap.c                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hpowlows <hpowlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/28 20:12:39 by hpowlows          #+#    #+#             */
-/*   Updated: 2018/12/10 18:52:06 by hpowlows         ###   ########.fr       */
+/*   Created: 2018/12/19 18:23:48 by hpowlows          #+#    #+#             */
+/*   Updated: 2019/01/06 17:55:51 by hpowlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <unistd.h>
 
-char	*ft_strmap(char const *s, char (*f)(char))
+void	ft_putstr(char const *s)
 {
-	char	*result;
-	int		index;
-
-	if (!s || !f)
-		return (NULL);
-	if (!(result = (char *)malloc(sizeof(*s) * ft_strlen(s) + 1)))
-		return (NULL);
-	index = 0;
-	while (s[index])
-	{
-		result[index] = f(s[index]);
-		index++;
-	}
-	result[index] = '\0';
-	return (result);
+	while (*s)
+		write(1, s++, 1);
 }

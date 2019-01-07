@@ -5,38 +5,37 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hpowlows <hpowlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/15 21:15:37 by hpowlows          #+#    #+#             */
-/*   Updated: 2018/12/26 20:39:13 by hpowlows         ###   ########.fr       */
+/*   Created: 2018/12/19 18:23:48 by hpowlows          #+#    #+#             */
+/*   Updated: 2019/01/06 18:08:53 by hpowlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int		main(int ac, char **av)
+int	main(int ac, char **av)
 {
-	char	*arr;
-	char	**pieces;
-	char	*map;
-	int		size;
+	int		fd;
+	t_piece	**pieces;
+	int		cnt;
 
-	size = 0;
+	cnt = 0;
 	if (ac == 2)
 	{
-		arr = ft_reader(av[1], 0);
-		if (ft_strlen(arr) > 544)
+		pieces = (t_piece**)malloc(sizeof(t_piece*) * 0x1a);
+		fd = open(*(av + 1), 0x0000);
+		if (check_file(fd, pieces, &cnt, 0))
 		{
-			ft_putstr("error\n");
-			goto ETRACT;
+			*(pieces + cnt) = 0;
+			close(fd);
+			if (check_newline(av[1], cnt))
+				generate(pieces, cnt);
+			else
+				ft_putstr("error\n");
 		}
-		pieces = ft_seperator(arr, 0x41);
-		while (size * size < g_piece * 4)
-			size += 1;
-		map = ft_strnew(size * (size + 1));
-		ft_map_gnrtion(map, pieces, -1, size);
-		ft_putchar(0x0a);
+		else
+			ft_putstr("error\n");
 	}
 	else
-		ft_putstr("usage\n");
-		ETRACT:
+		write(1, "usage\n", 6);
 	return (0);
 }

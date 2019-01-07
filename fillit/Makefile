@@ -1,37 +1,39 @@
 
 NAME = fillit
-SRC = main.c\
-		ft_seperator.c\
-		ft_read.c\
-		ft_cheacker.c\
-		ft_map_generation.c
-
-OBJ = $(SRC:.c=.o)
-
-CFLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
-$(NAME): libft/libft.a $(OBJ)
-	gcc $(OBJ) libft/libft.a -I libft -o $(NAME)
+$(NAME):
+	gcc -Wall -Wextra -Werror -c main.c \
+	converter.c \
+	generate.c \
+	check_file.c \
+	solver_fn1.c \
+	ft_memset.c \
+	ft_putchar.c \
+	ft_putstr.c \
+	ft_strsplit.c \
+	ft_bzero.c \
+	-I.fillit.h
 
-%.o: %.c fillit.h
-	gcc $(CFLAGS) -c -o $@ $<
+	gcc -Wall -Wextra -Werror main.o \
+	converter.o \
+	generate.o \
+	check_file.o \
+	solver_fn1.o \
+	ft_memset.o \
+	ft_putchar.o \
+	ft_putstr.o \
+	ft_strsplit.o \
+	ft_bzero.o \
+	-I.fillit.h -o $(NAME)
 
 clean:
-	rm -f $(OBJ)
-	make clean -C libft
+	rm -f *.o
 
 fclean: clean
 	rm -f $(NAME)
-	rm -f libft/libft.a
 
-re: fclean all
+re: fclean all clean
 
-# analize: libft/libft.a
-# 	gcc -Wall -Wextra -pedantic -Werror -Winit-self -Wunreachable-code -Wformat-y2k -Wformat-nonliteral -Wformat-security -Wformat=2 -Wmissing-include-dirs -Wswitch-default -Wtrigraphs -Wstrict-overflow=5 -Wfloat-equal -Wundef -Wshadow -Wbad-function-cast $(CFLAGS) $(SRC) libft/libft.a -I libft/libft.h -o fillit
-
-libft/libft.a:
-	make -C libft
-
-.PHONY: clean fclean all re
+.PHONY: clean re fclean all
