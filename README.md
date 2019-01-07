@@ -11,7 +11,7 @@ git clone https://github.com/kaparray/42
 - [X] Piscine Reloaded
 - [X] Libft
 - [X] Get_Next_Line
-- [ ] Fillit
+- [X] Fillit
 - [ ] ft_printf
 - [ ] Filler
 - [ ] Lem_in
