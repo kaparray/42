@@ -3,7 +3,7 @@
 42 - This is a innovation school of programming for all people around the world 18-30 years old.
 
 **For installation:**
-```
+```sh
 git clone https://github.com/kaparray/42
 ```
 
@@ -16,6 +16,7 @@ git clone https://github.com/kaparray/42
 - [ ] Filler
 - [ ] Lem_in
 - [ ] Corewar
+- [ ] Init
 
 |       Projects     |  Points |
 | ------------------ | ------- |
