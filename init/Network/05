@@ -1,0 +1,1 @@
+lookup  slash16.org | grep 'Server:' | awk '{print $2}'
