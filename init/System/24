@@ -1,0 +1,3 @@
+apt list
+
+# If installed packeges: apt list --lnstalled
