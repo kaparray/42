@@ -1,0 +1,5 @@
+echo "\033[0;31mMASHINE HARDWARE:"
+tput sgr0
+lscpu
+
+# Output data about hardware machine
