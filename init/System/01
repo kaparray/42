@@ -1,1 +1,3 @@
-# etc/issue or etc/debian_version
+etc/debian_version
+
+# etc/issue

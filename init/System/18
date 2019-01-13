@@ -1,0 +1,4 @@
+kill 
+
+# kill PID 
+# killall sshd

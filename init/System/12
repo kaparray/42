@@ -1,0 +1,4 @@
+du -hd 1 /var/*
+
+# -h provides results in “Human Readable Format“
+# -s to get the summary of a grand total disk usage size of an directory

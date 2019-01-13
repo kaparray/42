@@ -1,1 +1,2 @@
-ps -ef | grep 'ssh'
+service ssh status
+# sudo apt-get install openssh-server

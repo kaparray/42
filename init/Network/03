@@ -1,1 +1,1 @@
-networksetup -getmacaddress 'Bluetooth PAN' | awk '{print $3}'
+ifconfig en1 | grep 'ether ' | cut -d' ' -f2

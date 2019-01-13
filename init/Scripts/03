@@ -1,0 +1,10 @@
+echo "\033[0;31mMASHINE HARDWARE:"
+tput sgr0
+lscpu
+echo "\033[32m TO THIS SYSTEM CONNECTED:"
+tput sgr0
+who
+echo "\033[32m SYSTEM VERSION:"
+tput sgr0
+
+# Output data about hardware machine

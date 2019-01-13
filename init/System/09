@@ -1,0 +1,6 @@
+who
+
+# w -h Ignore the header information
+# w -u Display the load average (uptime output)
+# w -s Remove the JCPU, PCPU, and login time.
+
