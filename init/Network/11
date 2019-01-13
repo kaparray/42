@@ -1,2 +1,2 @@
-#192.168.21.252
-traceroute slash16.org | grep ' 1 '
+# nat-1  192.168.21.252
+traceroute slash16.org | grep ' 2 '
