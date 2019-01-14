@@ -12,14 +12,16 @@ git clone https://github.com/kaparray/42
 - [X] Libft
 - [X] Get_Next_Line
 - [X] Fillit
+- [X] Init
 - [ ] ft_printf
 - [ ] Filler
 - [ ] Lem_in
 - [ ] Corewar
-- [ ] Init
+
 
 |       Projects     |  Points |
 | ------------------ | ------- |
 | Piscine Reloaded   |   100   |
 |       Libft        |   125   |
 |      Fillit        |   100   |
+|       init        |   100     |

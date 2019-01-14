@@ -6,5 +6,6 @@ tput sgr0
 who
 echo "\033[32m SYSTEM VERSION:"
 tput sgr0
+cat /etc/issue
 
 # Output data about hardware machine
